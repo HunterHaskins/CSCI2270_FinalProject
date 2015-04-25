@@ -1,0 +1,212 @@
+Public Methods:
+void BuildTable();
+/*
+Function Prototype:
+void HashTable::BuildTable()
+
+Function description:
+This function builds the hash table and initializes all spots on the hash table to have x = false
+
+Example:
+HashTable ht;
+ht.buildTable();
+
+Precondition:
+No preconditions besides a having created a HashTable object
+
+PostCondition:
+A 5x5 hash table created with all spots have x = false
+*/
+
+
+
+void printGrid();
+/*
+Function Prototype:
+void HashTable::printGrid()
+
+Function description:
+loops through the hash table and prints out o's or x's in a grid which correspond to a spot in the hash table
+
+Example:
+HashTable ht;
+ht.printGrid();
+
+Precondition:
+each spot in the hash table must not be null and have x = either true or false
+
+PostCondition:
+A 5x5 grid of x's and o's displayed in terminal
+*/
+
+
+
+
+void changeSpot(int row, int column);
+/*
+Function Prototype:
+void HashTable::changeSpot(int, int)
+
+Function description:
+changes the spot at the given index in the hash table to the opposite of what it was 'o' or 'x'
+
+Example:
+HashTable ht;
+ht.changeSpot(3,2);
+
+Precondition:
+each spot in the hash table must not be null and have x = either true or false
+
+PostCondition:
+The spot given change and all spots adjacent change if they exist
+*/
+
+
+void changeRow(int row);
+*
+Function Prototype:
+void HashTable::changeRow(int)
+
+Function description:
+changes the row at the given index in the hash table to the opposite of what it was 'o' or 'x'
+and the spot adjacent to the middle of the row
+
+Example:
+HashTable ht;
+ht.changeRow(3);
+
+Precondition:
+each spot in the hash table must not be null and have x = either true or false
+
+PostCondition:
+The row given change and the two spots adjacent to the middle of the row change if they exist
+*/
+
+
+void changeColumn(int column);
+/*
+Function Prototype:
+void HashTable::changeColumn(int)
+
+Function description:
+changes the column at the given index in the hash table to the opposite of what it was 'o' or 'x'
+and the spot adjacent to the middle of the column
+
+Example:
+HashTable ht;
+ht.changeColumn(4);
+
+Precondition:
+each spot in the hash table must not be null and have x = either true or false
+
+PostCondition:
+The Column given change and the two spots adjacent to the middle of the column change if they exist
+*/
+
+
+
+void checkUp(int row, int column);
+*
+Function Prototype:
+void HashTable::checkUp(int,int)
+
+Function description:
+check if the spot above the given spot exist and changes its 'x' or 'o' if it does
+
+Example:
+HashTable ht;
+ht.checkUp(3,1);
+
+Precondition:
+each spot in the hash table must not be null and have x = either true or false
+
+PostCondition:
+the spot above the given spot change if it exits
+*/
+
+
+
+void checkUnder(int row, int column);
+/*
+Function Prototype:
+void HashTable::checkUnder(int,int)
+
+Function description:
+check if the spot below the given spot exist and changes its 'x' or 'o' if it does
+
+Example:
+HashTable ht;
+ht.checkUnder(1,1);
+
+Precondition:
+each spot in the hash table must not be null and have x = either true or false
+
+PostCondition:
+the spot below the given spot change if it exits
+*/
+
+
+void checkLeft(int row, int column);
+*
+Function Prototype:
+void HashTable::checkLeft(int,int)
+
+Function description:
+check if the spot to the left of the given spot exist and changes its 'x' or 'o' if it does
+
+Example:
+HashTable ht;
+ht.checkLeft(3,4);
+
+Precondition:
+each spot in the hash table must not be null and have x = either true or false
+
+PostCondition:
+the spot to the left of the given spot change if it exits
+*/
+
+
+
+void checkRight(int row, int column);
+/*
+Function Prototype:
+void HashTable::checkRight(int,int)
+
+Function description:
+check if the spot above the given spot exit and changes its 'x' or 'o' if it does
+
+Example:
+HashTable ht;
+ht.checkRight(4,2);
+
+Precondition:
+each spot in the hash table must not be null and have x = either true or false
+
+PostCondition:
+the spot to the right of the given spot change if it exits
+*/
+
+
+
+bool checkForVictory();
+/*
+Function Prototype:
+void HashTable::checkForVictory()
+
+Function description:
+checks all spots in the hash table and checks how many x's there are, and if there are 25 then it return true
+for the game being complete
+
+Example:
+HashTable ht;
+ht.checkForVictory();
+
+Precondition:
+each spot in the hash table must not be null and have x = either true or false
+
+PostCondition:
+true returned if the board is all x's and false if there is any o's in the board
+*/
+
+
+
