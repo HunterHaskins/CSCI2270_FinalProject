@@ -17,7 +17,7 @@ HashTable::HashTable()
 
 /*
 Function Prototype:
-void HashTable::BuildTable()
+void HashTable::BuildTable();
 
 Function description:
 This function builds the hash table and initializes all spots on the hash table to have x = false
@@ -49,7 +49,6 @@ void HashTable::BuildTable()
             newSpot->next = newSpot2;
             newSpot = newSpot2;
         }
-
     }
     //printing the grid when finished
     printGrid();
@@ -57,7 +56,7 @@ void HashTable::BuildTable()
 
 /*
 Function Prototype:
-void HashTable::printGrid()
+void HashTable::printGrid();
 
 Function description:
 loops through the hash table and prints out o's or x's in a grid which correspond to a spot in the hash table
@@ -105,12 +104,13 @@ void HashTable::printGrid()
             }
         }
         cout<<"\n"<<endl;
+        delete spotTemp;
     }
 }
 
 /*
 Function Prototype:
-void HashTable::changeSpot(int, int)
+void HashTable::changeSpot(int, int);
 
 Function description:
 changes the spot at the given index in the hash table to the opposite of what it was 'o' or 'x'
@@ -164,6 +164,7 @@ void HashTable::changeSpot(int row, int column)
         {
             spotTemp->x = true;
         }
+        delete spotTemp;
     }
 
     //changing adjacent spots and printing the grid
@@ -176,7 +177,7 @@ void HashTable::changeSpot(int row, int column)
 
 /*
 Function Prototype:
-void HashTable::changeRow(int)
+void HashTable::changeRow(int);
 
 Function description:
 changes the row at the given index in the hash table to the opposite of what it was 'o' or 'x'
@@ -227,7 +228,7 @@ void HashTable::changeRow(int row)
             spotTemp->x = true;
         }
     }
-
+    delete spotTemp;
     //changing the spots adjacent to the middle of the row and printing the grid
     checkUp(row, 2);
     checkUnder(row, 2);
@@ -236,7 +237,7 @@ void HashTable::changeRow(int row)
 
 /*
 Function Prototype:
-void HashTable::changeColumn(int)
+void HashTable::changeColumn(int);
 
 Function description:
 changes the column at the given index in the hash table to the opposite of what it was 'o' or 'x'
@@ -294,6 +295,7 @@ void HashTable::changeColumn(int column)
             {
                 spotTemp->x = true;
             }
+            delete spotTemp;
         }
     }
 
@@ -305,7 +307,7 @@ void HashTable::changeColumn(int column)
 
 /*
 Function Prototype:
-void HashTable::checkUp(int,int)
+void HashTable::checkUp(int,int);
 
 Function description:
 check if the spot above the given spot exist and changes its 'x' or 'o' if it does
@@ -358,6 +360,7 @@ void HashTable::checkUp(int row, int column)
         {
             spotTemp->x = true;
         }
+        delete spotTemp;
     }
 }
 
@@ -416,6 +419,7 @@ void HashTable::checkUnder(int row, int column)
         {
             spotTemp->x = true;
         }
+        delete spotTemp;
     }
 }
 
@@ -474,6 +478,7 @@ void HashTable::checkLeft(int row, int column)
         {
             spotTemp->x = true;
         }
+        delete spotTemp;
     }
 }
 
@@ -532,6 +537,7 @@ void HashTable::checkRight(int row, int column)
         {
             spotTemp->x = true;
         }
+        delete spotTemp;
     }
 }
 
@@ -583,8 +589,8 @@ bool HashTable::checkForVictory()
             {
                 xCount++;
             }
-
         }
+        delete spotTemp;
     }
 
     //if there are 25 x's, then the board is full and the game is complete
