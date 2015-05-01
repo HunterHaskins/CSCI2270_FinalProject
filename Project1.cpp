@@ -133,9 +133,9 @@ bool victory()
 {
     int check;
     bool playAgain;
-    cout<<"CONGRADULATIONS"<<endl;
-    cout<<"you have completed the game!"<<endl;
-    cout<<"Play again? enter 0 for no, and 1 for yes"<<endl;
+    cout<<"CONGRATULATIONS!"<<endl;
+    cout<<"You have completed the game!"<<endl;
+    cout<<"Play again? Enter 0 for no, and 1 for yes."<<endl;
     cin>>check;
     if (check == 0)
     {
